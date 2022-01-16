@@ -8,3 +8,8 @@ HEADERS = {
                   'Chrome/96.0.4664.45 Safari/537.36',
     'accept': '*/*'
 }
+
+
+def get_html(url, params=None):
+    r = requests.get(url, headers=HEADERS, params=params)
+    return r

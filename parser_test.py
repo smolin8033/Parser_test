@@ -23,6 +23,27 @@ def get_content(html):
     return text
 
 
+def save_file(text, new_file):
+    width = int(
+        input('Enter the number for maximum '
+              'number of characters in a line: ')
+    )
+    should_save = input(
+        'Would you like to create new txt file? '
+        'Input "Yes" or "No: '
+    )
+    ready_str = textwrap.fill(
+        text,
+        width=width,
+        replace_whitespace=False,
+        break_long_words=False
+    )
+    print(ready_str)
+    if should_save.strip() == 'Yes':
+        with open(new_file, 'w', encoding="utf-8") as file:
+            file.write(ready_str)
+
+
 def parse():
     URL = input('Enter URL for parsing: ')
     URL = URL.strip()

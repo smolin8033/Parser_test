@@ -13,3 +13,10 @@ HEADERS = {
 def get_html(url, params=None):
     r = requests.get(url, headers=HEADERS, params=params)
     return r
+
+
+def get_content(html):
+    soup = BS(html, 'html.parser')
+    text_elements = [t.get_text() for t in soup.find_all('p')]
+    text = '\n\n'.join(text_elements)
+    return text

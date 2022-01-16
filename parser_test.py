@@ -11,6 +11,9 @@ HEADERS = {
 }
 
 
+FILE = 'formatted_text.txt'
+
+
 def get_html(url, params=None):
     r = requests.get(url, headers=HEADERS, params=params)
     return r

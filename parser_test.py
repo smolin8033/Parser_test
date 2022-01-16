@@ -1,4 +1,5 @@
 import requests
+import textwrap
 from bs4 import BeautifulSoup as BS
 
 

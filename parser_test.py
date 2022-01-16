@@ -20,3 +20,17 @@ def get_content(html):
     text_elements = [t.get_text() for t in soup.find_all('p')]
     text = '\n\n'.join(text_elements)
     return text
+
+
+def parse():
+    URL = input('Enter URL for parsing: ')
+    URL = URL.strip()
+    html = get_html(URL)
+    if html.status_code == 200:
+        raw_text = get_content(html.text)
+        print(raw_text)
+    else:
+        print('Error')
+
+
+parse()

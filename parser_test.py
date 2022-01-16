@@ -53,7 +53,7 @@ def parse():
     html = get_html(URL)
     if html.status_code == 200:
         raw_text = get_content(html.text)
-        print(raw_text)
+        save_file(raw_text, FILE)
     else:
         print('Error')
 
